@@ -1,0 +1,28 @@
+maccelerate
+Copyright 2026 maccelerate-ai
+
+This product includes software developed by third parties.
+
+--------------------------------------------------------------------------
+1. mlx-serve — MIT OR Apache-2.0
+   Copyright (c) 2026 David Dalcu
+   https://github.com/ddalcu/mlx-serve
+
+   The MLX affine quantization core and the raw SafeTensors IO are ported
+   from mlx-serve (commit 16a47ec):
+
+     src/maccelerate/affine.py       <- tests/dsv4_imatrix.py
+                                     tests/convert_dsv4_weights.py
+     src/maccelerate/safetensors.py  <- tests/convert_dsv4_weights.py
+
+   Function bodies are preserved; modifications are the row-block streaming
+   wrapper and the packaging. mlx-serve is distributed under a choice of
+   MIT or Apache-2.0; this project elects Apache-2.0 for the ported files.
+
+--------------------------------------------------------------------------
+2. ud2mlx — MIT
+   https://github.com/jclyons52/ud2mlx
+
+   The qwen35 GGUF -> HF tensor-name mapping in
+   src/maccelerate/names.py mirrors dequant_gguf_to_hf.map_name, extended here
+   with the MTP block that ud2mlx drops.
